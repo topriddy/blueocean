@@ -9,6 +9,9 @@ pipeline {
                 ls -lah
             """
       }
+      stage('Lint HTML'){
+          sh 'tidy -q -e *.html'
+      }
     }
   }
 }
