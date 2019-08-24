@@ -17,7 +17,7 @@ pipeline {
     }
      stage('Upload to AWS'){
         steps {
-            withAWS(region: 'us-east-1', credentials: 'MyCredentials'){
+            withAWS(region: 'us-east-2', credentials: 'MyCredentials'){
                 s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file: 'hello.html', bucket: 'topriddy-c3pipelines')
             }
         }
